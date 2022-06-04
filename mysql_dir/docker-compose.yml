@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_docker
+    enviroment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbpass
+      TZ: 'Asia/Tokyo'
+    command: mysqlid --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes: 
+      - ./mysql/volume:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - 13306:3306
