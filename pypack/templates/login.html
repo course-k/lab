@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+	{% include "template.html" %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}"/>
 </head>
-<body>
-	<h1>メールアドレスと名前を送信してください</h1>
-	<form method="POST" actin="/">
-		<input placeholder="名前" name="username" type="text"/>
-		<input placeholder="メール" name="email" type="text"/>
-		<input value="送信" type="submit"/>
+<body class="text-center">
+	<form class="form-signin" method="POST" actin="/">
+		<h1 class="h3 mb-3 font-weight-normal" >メールアドレスと名前を送信してください</h1>
+		<input type="email" id="inputEmail" name="mail" class="form-control" placeholder="メール" required autofocus/>
+		<input type="password" id="inputPassword" name="password" class="form-control" placeholder="パスワード" required />
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 	</form>
 </body>
 </html>
