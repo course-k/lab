@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def render_form():
-	return render_template('login.html')
+	return render_template('index.html')
 
 
 @app.route('/', methods=['POST'])
